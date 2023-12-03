@@ -1,0 +1,46 @@
+# Helm learnint
+
+Helm installs resources in the following order:
+
+* Namespace
+* NetworkPolicy
+* ResourceQuota
+* LimitRange
+* PodSecurityPolicy
+* PodDisruptionBudget
+* ServiceAccount
+* Secret
+* SecretList
+* ConfigMap
+* StorageClass
+* PersistentVolume
+* PersistentVolumeClaim
+* CustomResourceDefinition
+* ClusterRole
+* ClusterRoleList
+* ClusterRoleBinding
+* ClusterRoleBindingList
+* Role
+* RoleList
+* RoleBinding
+* RoleBindingList
+* Service
+* DaemonSet
+* Pod
+* ReplicationController
+* ReplicaSet
+* Deployment
+* HorizontalPodAutoscaler
+* StatefulSet
+* Job
+* CronJob
+* Ingress
+* APIService
+
+
+---
+usage:
+```yaml
+  include_value: {{ include "mytpl" . | lower | quote }}
+  {{ include "toYaml" $value | indent 2 }}
+```

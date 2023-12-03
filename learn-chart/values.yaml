@@ -1,0 +1,12 @@
+who: required_who
+MyName: quote_MyName
+Port: 8080
+template_dot: "{{ .Values.MyName }}"
+template_name: "{{ .Values.who }}"
+firstName: Peter
+lastName: Parker
+imageCredentials:
+  registry: quay.io
+  username: someone
+  password: sillyness
+  email: someone@host.com

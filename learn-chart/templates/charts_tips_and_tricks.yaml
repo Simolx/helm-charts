@@ -1,0 +1,14 @@
+template_functions:
+  required_value: {{ required "A valid .Values.who entry required!" .Values.who }}
+  quote_value: {{ .Values.MyName | quote }}
+  noquote_int_value: {{ .Values.Port }}
+  env:
+    - name: HOST
+      value: "http://host"
+    - name: PORT
+      value: "1234"
+  template_dot: {{ tpl .Values.template_dot . }}
+  template_name: {{ tpl .Values.template_name .}}
+  checksum/config: {{ include (print $.Template.BasePath "/conf/app.conf") . | sha256sum }}
+  rollme: {{ randAlphaNum 5 | quote }}
+#   {{ tpl (.Files.Get "conf/app.conf") . }}
